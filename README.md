@@ -49,8 +49,6 @@ The Provided Code in this Notebook used to determine the suitable Threshold to M
 * 100 Reviews on Facebook Messenger Application [Jha, Nishant, and Anas Mahmoud. "Using frame semantics for classifying and summarizing
 application store reviews." Empirical Software Engineering 23 (2018): 3734-3767]
 * 70 Software Requirement for Facebook Messenger Application written in user-story template, Collected using OpenAI ChatGPT [Messenger_requirements.txt](https://github.com/JudyAlashqar/Estimating-the-Importance-of-Software-Requirements-based-on-Users-Reviews/files/13051418/_Messenger_requirements.txt)
-tion for requirements tracing: The study of methods." IEEE Transactions on
-Software Engineering 32.1 (2006): 4-19].
 * Review-Requirements Matching Dataset Annotated Manually by the Code Author Only [Messenger Facebook Requirement-Review Matching.txt](https://github.com/JudyAlashqar/Estimating-the-Importance-of-Software-Requirements-based-on-Users-Reviews/files/13051068/Messenger.Facebook.Requirement-Review.Matching.txt)
 #### Text Representation Methods:
 * Pretrained FastText on Domain: https://drive.google.com/file/d/1JFrGM43Jq8W2tanKBReu2jLNqN5uPoea/view [Alshangiti, Moayad, et al. "Hierarchical bayesian multi-kernel learning for integrated
@@ -64,3 +62,16 @@ After experimenting multiple values, the value 0.75 was adopted for the Similari
 candidate link generation for requirements tracing: The study of methods." IEEE Transactions on
 Software Engineering 32.1 (2006): 4-19.]
 ### Third: Sentiment Analysis_Estimate Requirements Importance_ Suggest New Requirements.ipynb
+The Provided Code in this Notebook is used to give a priority score (importance) for each requirement matched with reviews according to the previous stage, and give Keywords that represent suggestions for New Requirements.
+#### Approach:
+* Sentiment was determined for each Review using Pretrained Model: https://huggingface.co/finiteautomata/bertweet-base-sentiment-analysis
+* Type was determined for each Requirement based on the matched reviews with this requirement according to this heuristic:
+* * If there is at least One "Bug Report" Review that is related to it, then the Requirement Type is "Bug Report".
+  * If there is not any "Bug Report" Reviews but at least One Review that is "Feature Request", then the Requirement Type is "Feature Request".
+  * If there is only "Information Sharing" Reviews, then the Requirement Type is "Information Sharing".
+* Type Score was determined for each Requirement according to this:
+* * If the Requirement Type is "Bug Report", then the Score is 1
+  * If the Requirement Type is "Feature Request", then the Score is 0.5
+  * If the Requirement Type is "Information Sharing", then the Score is 0.25
+* Sentiment Score was determined for each Requirement based on the matched reviews with this requirement according to this heuristic:
+#### Results
