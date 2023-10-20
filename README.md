@@ -40,9 +40,27 @@ Software Engineering Conference and Symposium on the Foundations of Software Eng
 * Neural Network with One Fully-Connected Layer.
 #### Results:
 * Filtering Stage: Best Model is FastText Pretrained on Domain + Neural Network. The Model achieved F1-Score equals to 88% on P1-Golden dataset, 78% on Maleej Filtering dataset, and 80% on the Union of the two datasets.\
-  Reviews Filtering Model: https://drive.google.com/drive/folders/1dyR73Q6d4ZPDQ2VAECFaQ0xtB5Kj8xQz?usp=share_link \
+  Reviews Filtering Model: https://drive.google.com/drive/folders/1dyR73Q6d4ZPDQ2VAECFaQ0xtB5Kj8xQz?usp=share_link
 * Classification Stage: Best Model is FastText Pretrained on Domain + Neural Network. The Model achieved F1-Score equals to 66% on Maleej dataset, 74% on Pan dataset, and 74% on the Union of the two datasets (removing rating class, in addition to merging information seeking, information giving, and user experience under one class).\
   Reviews Classification Model: https://drive.google.com/drive/folders/1QfP23TS302D-lAew_PHMDn403nc-v-JI?usp=share_link
 ### Second: Review-Requirement Matching.ipynb
-
-
+The Provided Code in this Notebook used to determine the suitable Threshold to Match each Review with the Requirement(s) it talks about.
+#### Datasets:
+* 100 Reviews on Facebook Messenger Application [Jha, Nishant, and Anas Mahmoud. "Using frame semantics for classifying and summarizing
+application store reviews." Empirical Software Engineering 23 (2018): 3734-3767]
+* 70 Software Requirement for Facebook Messenger Application written in user-story template, Collected using OpenAI ChatGPT [Messenger_requirements.txt](https://github.com/JudyAlashqar/Estimating-the-Importance-of-Software-Requirements-based-on-Users-Reviews/files/13051418/_Messenger_requirements.txt)
+tion for requirements tracing: The study of methods." IEEE Transactions on
+Software Engineering 32.1 (2006): 4-19].
+* Review-Requirements Matching Dataset Annotated Manually by the Code Author Only [Messenger Facebook Requirement-Review Matching.txt](https://github.com/JudyAlashqar/Estimating-the-Importance-of-Software-Requirements-based-on-Users-Reviews/files/13051068/Messenger.Facebook.Requirement-Review.Matching.txt)
+#### Text Representation Methods:
+* Pretrained FastText on Domain: https://drive.google.com/file/d/1JFrGM43Jq8W2tanKBReu2jLNqN5uPoea/view [Alshangiti, Moayad, et al. "Hierarchical bayesian multi-kernel learning for integrated
+classification and summarization of app reviews." Proceedings of the 30th ACM Joint European
+Software Engineering Conference and Symposium on the Foundations of Software Engineering.
+2022]
+#### Apporach:
+Cosine Similarity Function. If the Similarity Score between a Review and a Requirement above the specified Threshold, then there is a Match.
+#### Results:
+After experimenting multiple values, the value 0.75 was adopted for the Similarity Threshold. Using this Value, Recall obtained was 60%, Precision was 30%, and F2-Score was 50%. This Result is considered Acceptable according to the Research Work related to the kind of task we are dealing with [Hayes, Jane Huffman, Alex Dekhtyar, and Senthil Karthikeyan Sundaram. "Advancing
+candidate link generation for requirements tracing: The study of methods." IEEE Transactions on
+Software Engineering 32.1 (2006): 4-19.]
+### Third: Sentiment Analysis_Estimate Requirements Importance_ Suggest New Requirements.ipynb
