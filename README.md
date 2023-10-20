@@ -31,7 +31,7 @@ doi: 10.17632/5fk732vkwr.2]
 #### Text Representaion Methods:
 * BOW (Binary, TF, TF-IDF).
 * Embedding (FastText pretrained on Domain, Facebook pretrained FastText, Bert CLS Token, Fine-tuned BERT).\
-  Used Fast Text Pretrained on Domain Url: https://drive.google.com/file/d/1JFrGM43Jq8W2tanKBReu2jLNqN5uPoea/view [Alshangiti, Moayad, et al. "Hierarchical bayesian multi-kernel learning for integrated
+  Used Fast Text Pretrained on Domain: https://drive.google.com/file/d/1JFrGM43Jq8W2tanKBReu2jLNqN5uPoea/view [Alshangiti, Moayad, et al. "Hierarchical bayesian multi-kernel learning for integrated
 classification and summarization of app reviews." Proceedings of the 30th ACM Joint European
 Software Engineering Conference and Symposium on the Foundations of Software Engineering.
 2022]
@@ -39,8 +39,10 @@ Software Engineering Conference and Symposium on the Foundations of Software Eng
 * Support Vector Machine.
 * Neural Network with One Fully-Connected Layer.
 #### Results:
-* Filtering Stage: Best Model is FastText Pretrained on Domain + Neural Network. The Model achieved F1-Score equals to 88% on Pa-Golden dataset, 78% on Maleej Filtering dataset, and 80% on the Union of the two datasets.
-  Reviews Filtering Model Url: 
-
+* Filtering Stage: Best Model is FastText Pretrained on Domain + Neural Network. The Model achieved F1-Score equals to 88% on P1-Golden dataset, 78% on Maleej Filtering dataset, and 80% on the Union of the two datasets.\
+  Reviews Filtering Model: https://drive.google.com/drive/folders/1dyR73Q6d4ZPDQ2VAECFaQ0xtB5Kj8xQz?usp=share_link \
+* Classification Stage: Best Model is FastText Pretrained on Domain + Neural Network. The Model achieved F1-Score equals to 66% on Maleej dataset, 74% on Pan dataset, and 74% on the Union of the two datasets (removing rating class, in addition to merging information seeking, information giving, and user experience under one class).\
+  Reviews Classification Model: https://drive.google.com/drive/folders/1QfP23TS302D-lAew_PHMDn403nc-v-JI?usp=share_link
+### Second: Review-Requirement Matching.ipynb
 
 
