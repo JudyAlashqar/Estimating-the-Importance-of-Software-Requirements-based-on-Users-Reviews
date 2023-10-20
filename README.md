@@ -76,7 +76,7 @@ The Provided Code in this Notebook is used to give a priority score (importance)
 * Sentiment Score was determined for each Requirement based on the matched reviews with this requirement according to this heuristic:
   $$Score(Requirement) = (\sum_{k=1}^n p_k x_k)/n$$
   Where:
-  * * n is the Number of Reviews that mention this Requirement
+    * n is the Number of Reviews that mention this Requirement
     * $p_k$ is the Propability of the Predicted Sentiment Class of Review $r_k$
     * $x_k$ is 1 when the Predicted Sentiment Class of Review $r_k$ is Negative, and 0.5 when it is Positive
 * Mention Ratio was Calculated for each Requirement as:\
