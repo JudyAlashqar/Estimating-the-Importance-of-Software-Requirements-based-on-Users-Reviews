@@ -74,4 +74,14 @@ The Provided Code in this Notebook is used to give a priority score (importance)
   * If the Requirement Type is "Feature Request", then the Score is 0.5
   * If the Requirement Type is "Information Sharing", then the Score is 0.25
 * Sentiment Score was determined for each Requirement based on the matched reviews with this requirement according to this heuristic:
-#### Results
+  $$Score(Requirement) = (\sum_{k=1}^n p_k x_k)/n$$
+  Where:
+  * * n is the Number of Reviews that mention this Requirement
+    * $p_k$ is the Propability of the Predicted Sentiment Class of Review $r_k$
+    * $x_k$ is 1 when the Predicted Sentiment Class of Review $r_k$ is Negative, and 0.5 when it is Positive
+* Mention Ratio was Calculated for each Requirement as:\
+  (Number of Reviews that mentioned this Requirement)/(Number of Reviews for the most mentioned Requirement)
+* Importance (Priority) Score was Calculated for each Requirement according to this heuristic:\
+  Priority(Requirement) = Requirement Mentions Ratio + Requirement Type + Requirement Sentiment Score
+* K-Means Algorithm was applied to Cluster the Reviews that did Not Match with any Requirement according the results of previous stages.
+* Each group was considered as a suggesstion for a new requirement. The three most frequent words for each group which did not belong to the stopwords were chosen to represent the suggested requirement, and a scatter chart plotted to demonstrate the clusters in 2D space using PCA for dimensions reduction.
