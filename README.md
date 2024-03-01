@@ -1,6 +1,6 @@
 # Estimating-the-Importance-of-Software-Requirements-based-on-Users-Reviews
 Python Project to Analyze User's Reviews on Software Applications and Extract Information from them that are Useful for the Development in the Next Sprints.
-## After Collecting Users' Reviews on Messenger Application and Software Requirements for this Application, the Proposed Approach Consists of 7 main Practical Stages:
+## After Collecting Users' Reviews and Software Requirements for Facebook Messenger Application, the Proposed Approach Consists of 7 main Practical Stages:
 * Representing Users' Reviews using multiple Syntactical and Semantic Representations.
 * Build and Train Machine Learning Models to Filter these Reviews (Classify them to: Contains a Requirement/ Does Not Contain a Requirement).
 * Build and Train Machine Learning Models to Classify these Reviews to: Feature Request/ Bug Report/ Information Sharing.
